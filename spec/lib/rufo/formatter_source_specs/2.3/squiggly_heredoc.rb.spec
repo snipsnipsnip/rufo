@@ -247,3 +247,20 @@ EOF
 <<~EOF
   #{1}#{2}
 EOF
+
+#~# ORIGINAL heredoc_hash
+#~# PENDING
+
+{
+  content: <<~EOF,
+    heredoc
+  EOF
+}
+
+#~# EXPECTED
+
+{
+  content: <<~EOF,
+    heredoc
+  EOF
+}
