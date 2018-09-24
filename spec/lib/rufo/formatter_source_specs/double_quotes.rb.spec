@@ -5,7 +5,7 @@
 
 #~# EXPECTED
 
-"a great string"
+'a great string'
 
 #~# ORIGINAL
 #~# quote_style: :double
@@ -14,7 +14,7 @@
 
 #~# EXPECTED
 
-"🚀"
+'🚀'
 
 #~# ORIGINAL
 #~# quote_style: :double
@@ -23,7 +23,7 @@
 
 #~# EXPECTED
 
-""
+''
 
 #~# ORIGINAL
 #~# quote_style: :double

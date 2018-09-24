@@ -388,9 +388,9 @@ include Module.new {
 include Module.new {
   def call(str)
     case str
-    when "b"
+    when 'b'
     else
-      "d"
+      'd'
     end
   end
 }
