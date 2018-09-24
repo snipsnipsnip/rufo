@@ -1356,7 +1356,7 @@ class Rufo::Formatter
     # This is for the empty `{ }` block
     if void_exps?(body)
       consume_token :on_lbrace
-      consume_block_args args
+      consume_block_args args, true
       consume_space
       consume_token :on_rbrace
       return
@@ -1367,7 +1367,7 @@ class Rufo::Formatter
     # If the whole block fits into a single line, use braces
     if current_token_line == closing_brace_token[0][0]
       consume_token :on_lbrace
-      consume_block_args args
+      consume_block_args args, true
       consume_space
       visit_exps body, with_lines: false
 
@@ -1383,7 +1383,7 @@ class Rufo::Formatter
 
     # Otherwise it's multiline
     consume_token :on_lbrace
-    consume_block_args args
+    consume_block_args args, true
 
     if call_info = @line_to_call_info[@line]
       call_info << true
@@ -1409,7 +1409,7 @@ class Rufo::Formatter
 
     consume_keyword "do"
 
-    consume_block_args args
+    consume_block_args args, false
 
     if body.first == :bodystmt
       visit_bodystmt body
@@ -1420,9 +1420,13 @@ class Rufo::Formatter
     end
   end
 
-  def consume_block_args(args)
+  def consume_block_args(args, squeeze)
     if args
-      consume_space_or_newline
+      if squeeze
+        skip_space_or_newline
+      else
+        consume_space_or_newline
+      end
       # + 1 because of |...|
       #                ^
       indent(@column + 1) do
