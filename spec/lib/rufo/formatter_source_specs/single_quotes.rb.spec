@@ -5,7 +5,7 @@
 
 #~# EXPECTED
 
-'a great string'
+"a great string"
 
 #~# ORIGINAL
 #~# quote_style: :single
@@ -14,7 +14,7 @@
 
 #~# EXPECTED
 
-'🚀'
+"🚀"
 
 #~# ORIGINAL
 #~# quote_style: :single
@@ -23,7 +23,7 @@
 
 #~# EXPECTED
 
-''
+""
 
 #~# ORIGINAL
 #~# quote_style: :single
@@ -104,7 +104,7 @@
 
 #~# EXPECTED
 
-"#"
+'#'
 
 
 #~# ORIGINAL
@@ -135,5 +135,5 @@ foobar 1,
 #~# EXPECTED
 
 foobar 1,
-  'foo
-   bar'
+  "foo
+   bar"

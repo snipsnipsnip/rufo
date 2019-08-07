@@ -607,7 +607,6 @@ class Rufo::Formatter
     elsif current_token_kind == :on_backtick
       consume_token :on_backtick
     else
-      return if format_simple_string(node)
       consume_token :on_tstring_beg
     end
 
@@ -625,45 +624,6 @@ class Rufo::Formatter
     return if inner[0] != :@tstring_content
     string = inner[1]
     string
-  end
-
-  # Which quote character are we using?
-  def quote_char
-    (quote_style == :double) ? '"' : "'"
-  end
-
-  # should we format this string according to :quote_style?
-  def should_format_string?(string)
-    # don't format %q or %Q
-    return unless current_token_value == "'" || current_token_value == '"'
-    # don't format strings containing slashes
-    return if string.include?("\\")
-    # don't format strings that contain our quote character
-    return if string.include?(quote_char)
-    return if string.include?('#{')
-    return if string.include?('#$')
-    true
-  end
-
-  def format_simple_string(node)
-    # is it a simple string node?
-    string = simple_string(node)
-    return if !string
-
-    # is it eligible for formatting?
-    return if !should_format_string?(string)
-
-    # success!
-    write quote_char
-    next_token
-    with_unmodifiable_string_lines do
-      inner = node[1][1..-1]
-      visit_exps(inner, with_lines: false)
-    end
-    write quote_char
-    next_token
-
-    true
   end
 
   # Every line between the first line and end line of this string (excluding the
