@@ -12,7 +12,7 @@ foo{|x|1}
 
 #~# EXPECTED
 
-foo { |x| 1 }
+foo {|x| 1 }
 
 #~# ORIGINAL
 

@@ -71,7 +71,7 @@ foo { | x , y | }
 
 #~# EXPECTED
 
-foo { |x, y| }
+foo {|x, y| }
 
 #~# ORIGINAL
 
@@ -79,7 +79,7 @@ foo { | x , | }
 
 #~# EXPECTED
 
-foo { |x, | }
+foo {|x, | }
 
 #~# ORIGINAL
 
@@ -87,7 +87,7 @@ foo { | x , y, | bar}
 
 #~# EXPECTED
 
-foo { |x, y, | bar }
+foo {|x, y, | bar }
 
 #~# ORIGINAL
 
@@ -111,7 +111,7 @@ foo { | ( x ) , z | }
 
 #~# EXPECTED
 
-foo { |(x), z| }
+foo {|(x), z| }
 
 #~# ORIGINAL
 
@@ -119,7 +119,7 @@ foo { | ( x , y ) , z | }
 
 #~# EXPECTED
 
-foo { |(x, y), z| }
+foo {|(x, y), z| }
 
 #~# ORIGINAL
 
@@ -127,7 +127,7 @@ foo { | ( x , ( y , w ) ) , z | }
 
 #~# EXPECTED
 
-foo { |(x, (y, w)), z| }
+foo {|(x, (y, w)), z| }
 
 #~# ORIGINAL
 
@@ -135,7 +135,7 @@ foo { | bar: 1 , baz: 2 | }
 
 #~# EXPECTED
 
-foo { |bar: 1, baz: 2| }
+foo {|bar: 1, baz: 2| }
 
 #~# ORIGINAL
 
@@ -143,7 +143,7 @@ foo { | *z | }
 
 #~# EXPECTED
 
-foo { |*z| }
+foo {|*z| }
 
 #~# ORIGINAL
 
@@ -151,7 +151,7 @@ foo { | **z | }
 
 #~# EXPECTED
 
-foo { |**z| }
+foo {|**z| }
 
 #~# ORIGINAL
 
@@ -159,7 +159,7 @@ foo { | bar = 1 | }
 
 #~# EXPECTED
 
-foo { |bar = 1| }
+foo {|bar = 1| }
 
 #~# ORIGINAL
 
@@ -167,7 +167,7 @@ foo { | x , y | 1 }
 
 #~# EXPECTED
 
-foo { |x, y| 1 }
+foo {|x, y| 1 }
 
 #~# ORIGINAL
 
@@ -176,7 +176,7 @@ foo { | x |
 
 #~# EXPECTED
 
-foo { |x|
+foo {|x|
   1
 }
 
@@ -188,8 +188,8 @@ foo { | x ,
 
 #~# EXPECTED
 
-foo { |x,
-       y|
+foo {|x,
+      y|
   1
 }
 
@@ -239,7 +239,7 @@ foo { |;x| }
 
 #~# EXPECTED
 
-foo { |; x| }
+foo {|; x| }
 
 #~# ORIGINAL
 
@@ -248,7 +248,7 @@ foo { |
 
 #~# EXPECTED
 
-foo { |; x| }
+foo {|; x| }
 
 #~# ORIGINAL
 
@@ -256,7 +256,7 @@ foo { |;x, y| }
 
 #~# EXPECTED
 
-foo { |; x, y| }
+foo {|; x, y| }
 
 #~# ORIGINAL
 
@@ -264,7 +264,7 @@ foo { |a, b;x, y| }
 
 #~# EXPECTED
 
-foo { |a, b; x, y| }
+foo {|a, b; x, y| }
 
 #~# ORIGINAL
 
@@ -272,7 +272,7 @@ proc { |(x, *y),z| }
 
 #~# EXPECTED
 
-proc { |(x, *y), z| }
+proc {|(x, *y), z| }
 
 #~# ORIGINAL
 
@@ -280,7 +280,7 @@ proc { |(w, *x, y), z| }
 
 #~# EXPECTED
 
-proc { |(w, *x, y), z| }
+proc {|(w, *x, y), z| }
 
 #~# ORIGINAL
 
@@ -288,7 +288,7 @@ foo { |(*x, y), z| }
 
 #~# EXPECTED
 
-foo { |(*x, y), z| }
+foo {|(*x, y), z| }
 
 #~# ORIGINAL
 
@@ -305,5 +305,4 @@ foo {
 
 #~# EXPECTED
 
-foo {
-  |i| }
+foo {|i| }
